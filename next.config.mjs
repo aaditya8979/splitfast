@@ -1,6 +1,13 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+// 🟢 Point this to your specific file path
+const withNextIntl = createNextIntlPlugin(
+  './src/i18n/requests.ts'
+);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
+  // Your existing "ignore errors" settings
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -8,15 +15,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
-    ],
-  },
+  
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
