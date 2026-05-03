@@ -23,16 +23,20 @@ if (process.env.S3_UPLOAD_ENDPOINT) {
 }
 
 /** @type {import('next').NextConfig} */
+const allowedOrigins = ['localhost:3000', 'localhost:3001', 'localhost:3333']
+if (process.env.VERCEL_URL) {
+  allowedOrigins.push(process.env.VERCEL_URL)
+}
+
 const nextConfig = {
   images: {
     remotePatterns
   },
-  // Required to run in a codespace (see https://github.com/vercel/next.js/issues/58019)
   experimental: {
     serverActions: {
-        allowedOrigins: ['localhost:3000'],
+      allowedOrigins,
     },
-},
+  },
 }
 
 export default withNextIntl(nextConfig)

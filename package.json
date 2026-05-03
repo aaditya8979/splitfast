@@ -1,5 +1,5 @@
 {
-  "name": "spliit2",
+  "name": "splitfast-pro",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,9 +10,8 @@
     "check-types": "tsc --noEmit",
     "check-formatting": "prettier -c src",
     "prettier": "prettier -w src",
-    "postinstall": "prisma migrate deploy && prisma generate",
-    "build-image": "./scripts/build-image.sh",
-    "start-container": "docker compose --env-file container.env up",
+    "postinstall": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
     "test": "jest",
     "generate-currency-data": "ts-node -T ./src/scripts/generateCurrencyData.ts"
   },

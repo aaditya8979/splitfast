@@ -1,7 +1,7 @@
 {
   "Homepage": {
     "title": "Comparteix <strong>despeses</strong> amb <strong>família i amics</strong>",
-    "description": "Benvinguda a <strong>Spliit</strong>!",
+    "description": "Benvinguda a <strong>SplitFast</strong>!",
     "button": {
       "groups": "Veure els grups",
       "github": "GitHub"
@@ -12,7 +12,7 @@
   },
   "Footer": {
     "madeIn": "Fet a India",
-    "builtBy": "Desenvolupat per Aaditya & Varad"
+    "builtBy": "Desenvolupat per Aaditya"
   },
   "Expenses": {
     "title": "Despeses",

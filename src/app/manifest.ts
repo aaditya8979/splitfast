@@ -2,15 +2,15 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Spliit',
-    short_name: 'Spliit',
+    name: 'SplitFast',
+    short_name: 'SplitFast',
     description:
-      'A minimalist web application to share expenses with friends and family. No ads, no account, no problem.',
+      'The smartest way to split bills with flatmates, friends, and travel buddies. UPI settlements, real-time sync, no login required.',
     start_url: '/groups',
     id: '/groups',
     display: 'standalone',
-    background_color: '#fff',
-    theme_color: '#047857',
+    background_color: '#FAFAF9',
+    theme_color: '#4F46E5',
     icons: [
       {
         src: '/logo/48x48.png',

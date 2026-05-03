@@ -10,7 +10,7 @@ import { TRPCProvider } from '@/trpc/client'
 import type { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider, useTranslations } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
-import Image from 'next/image'
+
 import Link from 'next/link'
 import { Suspense } from 'react'
 import './globals.css'
@@ -18,33 +18,31 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
   title: {
-    default: 'SplitFast - Indian Bill Splitter · Share Expenses with Friends & Family',
-    template: '%s · SplitFast - Indian Bill Splitter',
+    default: 'SplitFast — Split Bills Instantly with Friends & Family',
+    template: '%s · SplitFast',
   },
   description:
-    'SpliitFst is a minimalist web application to share expenses with friends and family. No ads, no account, no problem.',
+    'SplitFast is the smartest way to split bills with flatmates, friends, and travel buddies. UPI settlements, GST handling, and real-time sync.',
   openGraph: {
-    title: 'SpliitFst · Share Expenses with Friends & Family',
+    title: 'SplitFast · Split Bills Instantly with Friends & Family',
     description:
-      'SpliitFast is a minimalist web application to share expenses with friends and family. No ads, no account, no problem.',
+      'SplitFast is the smartest way to split bills with flatmates, friends, and travel buddies. UPI settlements, GST handling, and real-time sync.',
     images: `/banner.png`,
     type: 'website',
     url: '/',
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@scastiel',
-    site: '@scastiel',
     images: `/banner.png`,
-    title: 'SpliitFast · Share Expenses with Friends & Family',
+    title: 'SplitFast · Split Bills Instantly with Friends & Family',
     description:
-      'SpliitFast is a minimalist web application to share expenses with friends and family. No ads, no account, no problem.',
+      'SplitFast is the smartest way to split bills with flatmates, friends, and travel buddies. UPI settlements, GST handling, and real-time sync.',
   },
   appleWebApp: {
     capable: true,
-    title: 'SpliitFast',
+    title: 'SplitFast',
   },
-  applicationName: 'SpliitFast',
+  applicationName: 'SplitFast',
   icons: [
     {
       url: '/android-chrome-192x192.png',
@@ -60,7 +58,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#047857',
+  themeColor: '#4F46E5',
 }
 
 function Content({ children }: { children: React.ReactNode }) {
@@ -69,17 +67,11 @@ function Content({ children }: { children: React.ReactNode }) {
     <TRPCProvider>
       <header className="fixed top-0 left-0 right-0 h-16 flex justify-between bg-white dark:bg-gray-950 bg-opacity-50 dark:bg-opacity-50 p-2 border-b backdrop-blur-sm z-50">
         <Link
-          className="flex items-center gap-2 hover:scale-105 transition-transform"
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           href="/"
         >
-          <h1>
-            <Image
-              src="/logo-with-text.png"
-              className="m-1 h-auto w-auto"
-              width={(35 * 522) / 180}
-              height={35}
-              alt="SpliitFast"
-            />
+          <h1 className="text-lg font-black tracking-tight text-foreground">
+            Split<span className="text-primary">Fast</span>
           </h1>
         </Link>
         <div role="navigation" aria-label="Menu" className="flex">
@@ -106,34 +98,53 @@ function Content({ children }: { children: React.ReactNode }) {
 
       <div className="pt-16 flex-1 flex flex-col">{children}</div>
 
-      <footer className="sm:p-8 md:p-16 sm:mt-16 sm:text-sm md:text-base md:mt-32 bg-slate-50 dark:bg-card border-t p-6 mt-8 flex flex-col sm:flex-row sm:justify-between gap-4 text-xs [&_a]:underline">
-        <div className="flex flex-col space-y-2">
-          <div className="sm:text-lg font-semibold text-base flex space-x-2 items-center">
-            <Link className="flex items-center gap-2" href="/">
-              <Image
-                src="/logo-with-text.png"
-                className="m-1 h-auto w-auto"
-                width={(35 * 522) / 180}
-                height={35}
-                alt="SpliitFast"
-              />
-            </Link>
+      <footer className="mt-16 border-t border-border">
+        {/* Gradient accent bar */}
+        <div className="h-1 w-full bg-gradient-to-r from-primary via-indigo-400 to-secondary" />
+
+        <div className="max-w-5xl mx-auto px-6 py-10 sm:py-14">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
+            {/* Left: Brand */}
+            <div className="space-y-3">
+              <Link href="/" className="inline-block group">
+                <span className="text-xl font-black tracking-tight text-foreground group-hover:text-primary transition-colors">
+                  Split<span className="text-primary">Fast</span>
+                </span>
+              </Link>
+              <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
+                The smartest way to split bills with flatmates, friends, and travel buddies. No sign-up required.
+              </p>
+            </div>
+
+            {/* Right: Links */}
+            <div className="flex gap-12 text-sm">
+              <div className="space-y-3">
+                <h4 className="font-semibold text-foreground text-xs uppercase tracking-wider">Product</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li><Link href="/groups" className="hover:text-primary transition-colors">My Groups</Link></li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h4 className="font-semibold text-foreground text-xs uppercase tracking-wider">Developer</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li><a href="https://github.com/aaditya8979" target="_blank" rel="noopener" className="hover:text-primary transition-colors">GitHub</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col space-y a--no-underline-text-white">
-            <span>{t('Footer.madeIn')}</span>
+
+          {/* Bottom bar */}
+          <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-muted-foreground">
+            <span>© {new Date().getFullYear()} SplitFast · Built with ❤️ in India</span>
             <span>
               {t.rich('Footer.builtBy', {
                 author: (txt) => (
-                  <a href="https://scastiel.dev" target="_blank" rel="noopener">
+                  <a href="https://github.com/aaditya8979" target="_blank" rel="noopener" className="font-medium text-foreground hover:text-primary transition-colors">
                     {txt}
                   </a>
                 ),
                 source: (txt) => (
-                  <a
-                    href="https://github.com/aaditya8979"
-                    target="_blank"
-                    rel="noopener"
-                  >
+                  <a href="https://github.com/aaditya8979" target="_blank" rel="noopener" className="font-medium text-foreground hover:text-primary transition-colors">
                     {txt}
                   </a>
                 ),
@@ -156,7 +167,7 @@ export default async function RootLayout({
   const messages = await getMessages()
   return (
     <html lang={locale} suppressHydrationWarning>
-      <ApplePwaSplash icon="/logo-with-text.png" color="#027756" />
+      <ApplePwaSplash icon="/logo-with-text.png" color="#4F46E5" />
       <body className="min-h-[100dvh] flex flex-col items-stretch bg-slate-50 bg-opacity-30 dark:bg-background">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider

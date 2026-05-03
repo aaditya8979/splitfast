@@ -22,18 +22,14 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        
-        // 🔴 MODIFIED: Forced your "SplitFast" Red
         primary: {
-          DEFAULT: '#FF6B6B', // Your Brand Red
-          foreground: '#FFFFFF',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
-        // 🟢 MODIFIED: Forced your "SplitFast" Teal
         secondary: {
-          DEFAULT: '#4ECDC4', // Your Brand Teal
-          foreground: '#FFFFFF',
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
-        
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
@@ -75,6 +71,13 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       fontFamily: {
+        sans: [
+          'Inter',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
         rounded: [
           'ui-rounded',
           'Hiragino Maru Gothic ProN',
@@ -89,8 +92,7 @@ module.exports = {
         ],
       },
       dropShadow: {
-        // 🔴 MODIFIED: Updated shadow color to match your red
-        title: '.25vw .25vw 0 #FF6B6B', 
+        title: '.25vw .25vw 0 hsl(239 84% 67%)',
       },
     },
   },

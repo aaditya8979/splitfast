@@ -1,7 +1,7 @@
 {
   "Homepage": {
     "title": "Share <strong>Expenses</strong> with <strong>Friends & Family</strong>",
-    "description": "Welcome to your new <strong>Spliit</strong> instance !",
+    "description": "Welcome to <strong>SplitFast</strong> — the smartest way to split bills!",
     "button": {
       "groups": "Go to groups",
       "github": "GitHub"
@@ -12,7 +12,7 @@
   },
   "Footer": {
     "madeIn": "Made in India",
-    "builtBy": "Built by Aaditya & Varad"
+    "builtBy": "Built by Aaditya"
   },
   "Expenses": {
     "title": "Expenses",

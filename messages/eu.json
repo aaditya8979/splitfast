@@ -1,7 +1,7 @@
 {
   "Homepage": {
     "title": "Partekatu <strong>gastuak lagunekin eta familiarekin</strong>",
-    "description": "Ongi etorri zure <strong>Spliit</strong> intantzia berrira!",
+    "description": "Ongi etorri zure <strong>SplitFast</strong> intantzia berrira!",
     "button": {
       "groups": "Joan taldeetara",
       "github": "GitHub"
@@ -12,7 +12,7 @@
   },
   "Footer": {
     "madeIn": "Montrealen egina, India",
-    "builtBy": "<author>Sebastien Castiel Aaditya & Varad egina"
+    "builtBy": "<author>Aaditya</author>-k egina"
   },
   "Expenses": {
     "title": "Gastuak",

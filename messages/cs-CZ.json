@@ -1,7 +1,7 @@
 {
   "Homepage": {
     "title": "Sdílejte <strong>výdaje</strong> s <strong>přáteli a rodinou</strong>",
-    "description": "Vítejte ve své nové instanci <strong>Spliitu</strong>!",
+    "description": "Vítejte ve své nové instanci <strong>SplitFastu</strong>!",
     "button": {
       "groups": "Přejít na skupiny",
       "github": "GitHub"
@@ -12,7 +12,7 @@
   },
   "Footer": {
     "madeIn": "Vyrobeno v India",
-    "builtBy": "Vytvořil Aaditya & Varad"
+    "builtBy": "Vytvořil Aaditya"
   },
   "Expenses": {
     "title": "Výdaje",

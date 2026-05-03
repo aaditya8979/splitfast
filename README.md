@@ -1,11 +1,8 @@
 # SplitFast 🇮🇳
 
-![SplitFast Banner](https://via.placeholder.com/1200x400/FF6B6B/FFFFFF?text=SplitFast+-+The+Indian+Bill+Splitter)
+**SplitFast** is the smartest way to split bills with flatmates, friends, and travel buddies. Designed for the **Indian context**, it handles everything from **UPI settlements** to complex restaurant bills (including GST & Service Charge) with ease.
 
-**SplitFast** is the smartest way to split bills with flatmates, friends, and travel buddies. Designed specifically for the **Indian context**, it handles everything from **UPI settlements** to complex restaurant bills (including GST & Service Charge) with ease.
-
-> **Hackathon Submission 2026**
-> *Live Demo:* [https://splitfast-final.vercel.app](https://splitfast-final.vercel.app)
+> **Built by Aaditya**
 
 ## 🚀 Features
 
@@ -25,44 +22,59 @@
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **Database:** [PostgreSQL](https://postgresql.org) (via **Supabase**)
 - **ORM:** [Prisma](https://prisma.io)
 - **Styling:** [TailwindCSS](https://tailwindcss.com/) + [Shadcn UI](https://ui.shadcn.com/)
 - **Deployment:** [Vercel](https://vercel.com)
-
+- **i18n:** [next-intl](https://next-intl-docs.vercel.app/) (23 languages)
 
 ## 🏃‍♂️ Run Locally
 
-Clone the project and start splitting bills in minutes.
-
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/aaditya8979/splitfast-final.git](https://github.com/aaditya8979/splitfast-final.git)
-   cd splitfast-final
+   git clone https://github.com/aaditya8979/splitfast-pro.git
+   cd splitfast-pro
    ```
 
 2. **Install Dependencies**
-     ```bash
+   ```bash
    npm install
    ```
 
 3. **Environment Setup**
-     ```bash
-    POSTGRES_PRISMA_URL="postgresql://..."
-    POSTGRES_URL_NON_POOLING="postgresql://..."
-    NEXT_PUBLIC_APP_URL="http://localhost:3000"
+
+   Copy the example env file and fill in your Supabase credentials:
+   ```bash
+   cp .env.example .env
    ```
 
-4. **Initialise Database**
-     ```bash
-   npx prisma db push
-    npx prisma db seed
+   ```env
+   POSTGRES_PRISMA_URL="postgresql://..."
+   POSTGRES_URL_NON_POOLING="postgresql://..."
+   NEXT_PUBLIC_APP_URL="http://localhost:3000"
    ```
 
-5. **Start Server**
-     ```bash
+4. **Initialize Database**
+   ```bash
+   npx prisma migrate deploy
+   npx prisma generate
+   ```
+
+5. **Start Development Server**
+   ```bash
    npm run dev
    ```
 
 Open http://localhost:3000 to view it in the browser.
+
+## 📦 Deploy to Vercel
+
+1. Push this repo to GitHub
+2. Connect it to [Vercel](https://vercel.com)
+3. Add your environment variables in Vercel dashboard
+4. Deploy — Vercel will handle the build automatically
+
+## 📄 License
+
+MIT License © 2026 Aaditya

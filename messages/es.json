@@ -1,7 +1,7 @@
 {
   "Homepage": {
     "title": "Comparte <strong>Gastos</strong> con <strong>Amigos y Familia</strong>",
-    "description": "¡Bienvenido a tu nueva instancia de <strong>Spliit</strong>!",
+    "description": "¡Bienvenido a tu nueva instancia de <strong>SplitFast</strong>!",
     "button": {
       "groups": "Ir a grupos",
       "github": "GitHub"
@@ -12,7 +12,7 @@
   },
   "Footer": {
     "madeIn": "Hecho en India",
-    "builtBy": "Construido por Aaditya & Varad"
+    "builtBy": "Construido por Aaditya"
   },
   "Expenses": {
     "title": "Gastos",
