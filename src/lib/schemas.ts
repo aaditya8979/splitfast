@@ -18,38 +18,6 @@ export const groupFormSchema = z
       )
       .min(1),
   })
-  .superRefine((expense, ctx) => {
-    if (expense.splitMode === 'BY_AMOUNT') {
-      const sum = expense.paidFor.reduce(
-        // 🟢 FIX: Add '|| 0' to handle empty inputs safely
-        (sum: any, { shares }: any) => new Decimal(shares || 0).add(sum),
-        new Decimal(0),
-      )
-      if (!sum.equals(new Decimal(expense.amount || 0))) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: 'Sum of shares must equal total amount',
-          path: ['amount'],
-        })
-      }
-    }
-    
-    if (expense.splitMode === 'BY_PERCENTAGE') {
-      const sum = expense.paidFor.reduce(
-        // 🟢 FIX: Add '|| 0' here too
-        (sum, { shares }) => new Decimal(shares || 0).add(sum),
-        new Decimal(0),
-      )
-      // Allow small floating point differences
-      if (sum.lessThan(99.9) || sum.greaterThan(100.1)) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: 'Percentages must equal 100%',
-          path: ['amount'],
-        })
-      }
-    }
-  })
 
 export type GroupFormValues = z.infer<typeof groupFormSchema>
 
